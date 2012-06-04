@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.thumb.forms.css.contrib">
+ <extension target="org.nuxeo.theme.styling.service" point="resources">
+  <resource name="thumbnail.css">
+    <path>css/thumbnail.css</path>
+  </resource>
+</extension>
+<extension target="org.nuxeo.theme.styling.service" point="pages">
+  <themePage name="galaxy/default">
+    <resources>
+      <resource>thumbnail.css</resource>
+    </resources>
+  </themePage>
+</extension>
+  <extension target="org.nuxeo.theme.services.ThemeService" point="views"> 
+    <view name="nuxeo5 includes" template-engine="jsf-facelets"
+      merge="true">
+      <format-type>widget</format-type>
+      <resource>thumbnail.css</resource>
+    </view>
+  </extension>
+</component>

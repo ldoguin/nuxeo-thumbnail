@@ -1,0 +1,9 @@
+<component name="org.nuxeo.sample.Thumbnail">
+
+   <extension target="org.nuxeo.ecm.core.api.DocumentAdapterService" point="adapters">
+       <adapter
+           class="org.nuxeo.thumb.Thumbnail" facet="Thumbnail"
+           factory="org.nuxeo.thumb.ThumbnailFactory"/>
+   </extension>
+    
+</component>

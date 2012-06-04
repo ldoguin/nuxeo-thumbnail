@@ -1,0 +1,13 @@
+<component name="org.nuxeo.thumb.listener.listener.contrib.UpdateThumbListener">
+
+  <extension target="org.nuxeo.ecm.core.event.EventServiceComponent"
+    point="listener">
+
+    <listener name="updatethumblistener" async="true" postCommit="false"
+      class="org.nuxeo.thumb.listener.UpdateThumbListener" priority="999">
+      <event>documentCreated</event>
+      <event>beforeDocumentModification</event>
+    </listener>
+  </extension>
+
+</component>

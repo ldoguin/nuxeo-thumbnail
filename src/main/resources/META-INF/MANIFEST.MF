@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Nuxeo
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 5.5
+Bundle-Name: nuxeo-thumbnail
+Nuxeo-Component: OSGI-INF/extensions/org.nuxeo.sample.Thumbnail.xml,OS
+ GI-INF/core-types-contrib.xml,OSGI-INF/layouts-listing-contrib.xml,OS
+ GI-INF/commandline-imagemagick-contrib.xml,OSGI-INF/convert-service-c
+ ontrib.xml,OSGI-INF/extensions/org.nuxeo.thumb.listener.UpdateThumbLi
+ stener.xml,OSGI-INF/theme-contrib.xml
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: nuxeo-thumbnail
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

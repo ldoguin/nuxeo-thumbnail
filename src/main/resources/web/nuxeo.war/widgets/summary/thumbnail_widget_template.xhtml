@@ -1,0 +1,15 @@
+<div class="img_content_block" id="#{widget.id}"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:c="http://java.sun.com/jstl/core"
+  xmlns:nxu="http://nuxeo.org/nxweb/util">
+
+  <c:if test="#{currentDocument.hasFacet('Thumbnail')}">
+    <nxu:set var="image_url"
+     value="#{nxd:fileUrl('downloadFile', currentDocument, 'thumb:content', currentDocument.dublincore.modified)}"
+     cache="true">
+        <img src="#{image_url}"
+          title="#{currentDocument.dublincore.description}" alt="#{currentDocument.dublincore.description}"/>
+    </nxu:set>
+  </c:if>
+
+</div>

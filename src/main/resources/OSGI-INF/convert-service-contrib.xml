@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.thumb.convert">
+
+  <extension target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl"
+    point="converter">
+    <converter name="toThumbnail" class="org.nuxeo.thumb.ThumbnailConverter">
+    </converter>
+  </extension>
+
+</component>

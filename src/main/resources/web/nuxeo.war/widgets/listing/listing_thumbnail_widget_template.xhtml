@@ -1,0 +1,39 @@
+<f:subview id="#{widget.id}"
+  xmlns:c="http://java.sun.com/jstl/core"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:nxu="http://nuxeo.org/nxweb/util"
+  xmlns:nxd="http://nuxeo.org/nxweb/document"
+  xmlns:nxl="http://nuxeo.org/nxforms/layout"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:nxp="http://nuxeo.org/nxweb/pdf">
+<c:if test="#{nxl:isLikePlainMode(widget.mode)}">#{field_2}</c:if>
+<c:if test="#{nxl:isLikeViewMode(widget.mode)}">
+
+  <c:if test="#{field_0.hasFacet('Thumbnail')}">
+    <nxu:set var="image_url"
+     value="#{nxd:fileUrl('downloadFile', field_0, 'thumb:content', field_0.dublincore.modified)}"
+     cache="true">
+        <img src="#{image_url}" class="bigIcon"
+          title="#{field_2}" alt="#{field_2}"/>
+    </nxu:set>
+  </c:if>
+
+  <c:if test="#{not field_0.hasFacet('Thumbnail')}">
+  <div id="docRefTarget:#{field_1}"
+    class="#{nxu:test(field_3, 'nxDropTarget', '')}">
+    <div id="docRef:#{field_1}"
+      class="cell popupTarget dropout nxDraggable"
+      docRef="#{field_1}">
+      <nxu:graphicImage
+        value="#{nxd:bigIconPath(field_0)}" alt="#{field_2}" title="#{field_2}"
+        rendered="#{!empty nxd:bigIconPath(field_0)}"
+        styleClass="bigIcon" />
+    </div>
+  </div>
+  </c:if>
+
+</c:if>
+<c:if test="#{widget.mode == 'pdf'}">
+  <nxp:image value="#{nxd:iconPath(field_0)}" />
+</c:if>
+</f:subview>
