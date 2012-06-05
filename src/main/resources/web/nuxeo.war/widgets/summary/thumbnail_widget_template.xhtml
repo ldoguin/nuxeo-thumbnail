@@ -8,7 +8,7 @@
     <nxu:set var="image_url"
      value="#{nxd:fileUrl('downloadFile', currentDocument, 'thumb:content', currentDocument.dublincore.modified)}"
      cache="true">
-        <img src="#{image_url}"
+        <nxu:graphicImage value="#{image_url}"
           title="#{currentDocument.dublincore.description}" alt="#{currentDocument.dublincore.description}"/>
     </nxu:set>
   </div>
