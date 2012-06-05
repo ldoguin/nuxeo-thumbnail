@@ -78,13 +78,13 @@ public class ThumbnailConverter extends IMImageUtils implements Converter {
 			CmdParameters params = new CmdParameters();
 			File outputFile = File.createTempFile("nuxeoImageTarget", "."
 					+ "png");
-			String size = "200";
+			String size = ThumbnailConstants.THUMBNAIL_DEFAULT_SIZE;
 			if (parameters != null) {
-				if (parameters.containsKey("size")) {
-					size = (String) parameters.get("size");
+				if (parameters.containsKey(ThumbnailConstants.THUMBNAIL_SIZE_PARAMETER_NAME)) {
+					size = (String) parameters.get(ThumbnailConstants.THUMBNAIL_SIZE_PARAMETER_NAME);
 				}
 			}
-			params.addNamedParameter("size", size);
+			params.addNamedParameter(ThumbnailConstants.THUMBNAIL_SIZE_PARAMETER_NAME, size);
 			params.addNamedParameter("inputFilePath", inputFile);
 			params.addNamedParameter("outputFilePath", outputFile);
 

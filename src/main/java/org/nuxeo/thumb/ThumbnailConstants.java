@@ -27,4 +27,9 @@ public class ThumbnailConstants {
 
 	public static final String THUMBNAIL_DIGEST_PROPERTY_NAME = "thumbnail:digest";
 
+	public static final String THUMBNAIL_SIZE_PARAMETER_NAME = "size";
+
+	public static final String THUMBNAIL_DEFAULT_SIZE = "200";
+
+
 }

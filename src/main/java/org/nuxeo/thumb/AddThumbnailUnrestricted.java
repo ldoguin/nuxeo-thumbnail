@@ -70,7 +70,7 @@ public class AddThumbnailUnrestricted extends UnrestrictedSessionRunner {
 					}
 				}
 				Map<String, Serializable> params = new HashMap<String, Serializable>();
-				params.put("size", "200");
+				params.put(ThumbnailConstants.THUMBNAIL_SIZE_PARAMETER_NAME, ThumbnailConstants.THUMBNAIL_DEFAULT_SIZE);
 				cs = Framework.getService(ConversionService.class);
 				BlobHolder thumbnailBlob = cs.convert(
 						ThumbnailConstants.THUMBNAIL_CONVERTER_NAME,
