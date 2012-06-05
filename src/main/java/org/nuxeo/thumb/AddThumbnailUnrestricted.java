@@ -13,6 +13,8 @@
 package org.nuxeo.thumb;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -67,10 +69,12 @@ public class AddThumbnailUnrestricted extends UnrestrictedSessionRunner {
 						return;
 					}
 				}
+				Map<String, Serializable> params = new HashMap<String, Serializable>();
+				params.put("size", "200");
 				cs = Framework.getService(ConversionService.class);
 				BlobHolder thumbnailBlob = cs.convert(
 						ThumbnailConstants.THUMBNAIL_CONVERTER_NAME,
-						blobHolder, null);
+						blobHolder, params);
 				if (thumbnailBlob != null) {
 					// we can compute a thumbnail, add it to the document.
 					if (!doc.hasFacet(ThumbnailConstants.THUMBNAIL_FACET)) {

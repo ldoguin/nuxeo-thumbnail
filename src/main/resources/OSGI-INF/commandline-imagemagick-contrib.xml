@@ -8,8 +8,8 @@
 
     <command name="toThumbnail" enabled="true">
       <commandLine>convert</commandLine>
-      <parameterString>-strip -thumbnail 200x200 -background transparent -gravity center -extent 200x200 -format png -quality 75 #{inputFilePath}[0] #{outputFilePath}</parameterString>
-      <winParameterString>-strip -thumbnail 200x200 -background transparent -gravity center -extent 200x200 -format png -quality 75 #{inputFilePath}[0] #{outputFilePath}</winParameterString>
+      <parameterString>-strip -thumbnail '%sizex%size'  -background transparent -gravity center -extent '%sizex%size' -format png -quality 75 #{inputFilePath}[0] #{outputFilePath}</parameterString>
+      <winParameterString>-strip -thumbnail "%sizex%size" -background transparent -gravity center -extent "%sizex%size" -format png -quality 75 #{inputFilePath}[0] #{outputFilePath}</winParameterString>
       <installationDirective>You need to install ImageMagick.</installationDirective>
     </command>
 
